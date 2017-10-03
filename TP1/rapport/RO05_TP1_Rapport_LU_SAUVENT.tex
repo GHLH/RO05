@@ -81,7 +81,8 @@ où $\xi_{n}, n \geq 0$ est une suite de v.a. iid de loi N(0,1) indépendante de
 \begin{align*}
 	ln(\frac{S_{M}}{S_{0}}) = \sum_{n=0}^{M-1} ln(1  + \mu h + \sigma h^{1/2} \xi_{n}).
 \end{align*}
-\noindent Démonstration:
+
+\noindent \textbf{Démonstration}:
 \par Selon l'équation(1.1), nous utilisons la méthode de la multiplication continuée pour résoudre cette question:
 \par quand n = 0, nous obtenons:
 \begin{equation}
@@ -91,6 +92,7 @@ où $\xi_{n}, n \geq 0$ est une suite de v.a. iid de loi N(0,1) indépendante de
 \begin{equation}
 \frac{S_{1}}{S_{0}} = 1 + \mu h + \sigma h^{1/2} \xi_{0}
 \end{equation} 
+
 \par quand n = 1, nous obtenons:
 \begin{equation}
 S_{2} = S_{1} + \mu h S_{1} + \sigma h^{1/2} S_{1} \xi_{1}
@@ -99,5 +101,33 @@ S_{2} = S_{1} + \mu h S_{1} + \sigma h^{1/2} S_{1} \xi_{1}
 \begin{equation}
 \frac{S_{2}}{S_{1}} = 1 + \mu h + \sigma h^{1/2} \xi_{1}
 \end{equation} 	
+
+\par Nous obtenons les autres équations en utilisant la même transformation et pour la dernière équation, c'est quand $n = M - 1$, nous obtenons:
+\begin{equation}
+S_{M} = S_{M-1} + \mu h S_{M-1} + \sigma h^{1/2} S_{M-1} \xi_{M-1}
+\end{equation}
+\par et pour $S_{M-1} \neq 0$ nous obtenons:
+\begin{equation}
+\frac{S_{M}}{S_{M-1}} = 1 + \mu h + \sigma h^{1/2} \xi_{M-1}
+\end{equation}
+
+\par Ensuite, nous multiplions des équations ensemble et obtenons l'équation finale: 
+\begin{align*}
+	\frac{S_{M}}{S_{0}} &= \frac{S_{M}}{\xout{S_{M-1}}} * \frac{\xout{S_{M-1}}}{\xout{S_{M-2}}} *\dots * \frac{\xout{S_{2}}}{\xout{S_{1}}} * \frac{\xout{S_{1}}}{S_{0}}\\
+&= (1 + \mu h + \sigma h^{1/2} \xi_{0}) * (1 + \mu h + \sigma h^{1/2} \xi_{1}) * \dots * (1 + \mu h + \sigma h^{1/2} \xi_{M-1})\\
+&= \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
+\end{align*}
+ 
+\par Donc, nous trouvons le résultat suivant:
+\begin{equation}
+S_{M} = S_{0} \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
+\end{equation}
+
+\par Maintenant nous calculons $\ln(\frac{S_{M}}{S_{0}})$:
+\begin{align*}
+	\ln(\frac{S_{M}}{S_{0}}) &= \ln \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n}) \\
+	&= \ln(1 + \mu h + \sigma h^{1/2} \xi_{0}) + \ln(1 + \mu h + \sigma h^{1/2} \xi_{1}) + \dots + \ln(1 + \mu h + \sigma h^{1/2} \xi_{M-1})\\
+	&= \sum_{n=0}^{M-1} ln(1  + \mu h + \sigma h^{1/2} \xi_{n})\\	
+\end{align*}
 
 \end{document}
