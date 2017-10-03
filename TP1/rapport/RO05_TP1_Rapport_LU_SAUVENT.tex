@@ -64,7 +64,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Contexte}
-considérons une option Européenne représentant un actif financier dont la valeur au temps \emph{t}
+\noindent Considérons une option Européenne représentant un actif financier dont la valeur au temps \emph{t} est S(t) pour $0 \leq t \leq T$, où T est le temps de l'exercice de l'option. Notons que $M \epsilon N^{\ast}$ le nombre de subdivision de l'intervalle [0,T] et h = T/M. notons également $S_{n} = S(nh)$, pour n = 0,1,...,M, les valeurs de l'actif aux instants t = nh.
+L‘équation d'évolution du prix de l'actif en temps discret s'écrit comme suit:
+\begin{equation}
+S_{n+1} = S_{n} + \mu h S_{n} + \sigma h^{1/2} S_{n} \xi_{n}   
+\end{equation} 
+où $\xi_{n}, n \geq 0$ est une suite de v.a. iid de loi N(0,1) indépendante de $S_{0}$. 
 
+\chapter{Démonstration des exercices}
+\section{Question 1}
+\noindent Monter que 
+\begin{align*}
+	S_{M} = S_{0} \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n}),
+\end{align*}
+\noindent et en réduire
+\begin{align*}
+	ln(\frac{S_{M}}{S_{0}}) = \sum_{n=0}^{M-1} ln(1  + \mu h + \sigma h^{1/2} \xi_{n}).
+\end{align*}
+\noindent Démonstration:
+\par Selon l'équation(1.1), nous utilisons la méthode de la multiplication continuée pour résoudre cette question:
+\par quand n = 0, nous obtenons:
+\begin{equation}
+	S_{1} = S_{0} + \mu h S_{0} + \sigma h^{1/2} S_{0} \xi_{0}
+\end{equation} 
+\par et pour $S_{0} \neq 0$ nous obtenons:
+\begin{equation}
+\frac{S_{1}}{S_{0}} = 1 + \mu h + \sigma h^{1/2} \xi_{0}
+\end{equation} 
+\par quand n = 1, nous obtenons:
+\begin{equation}
+S_{2} = S_{1} + \mu h S_{1} + \sigma h^{1/2} S_{1} \xi_{1}
+\end{equation}
+\par et pour $S_{1} \neq 0$ nous obtenons:
+\begin{equation}
+\frac{S_{2}}{S_{1}} = 1 + \mu h + \sigma h^{1/2} \xi_{1}
+\end{equation} 	
 
 \end{document}
