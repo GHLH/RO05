@@ -69,7 +69,7 @@ L‘équation d'évolution du prix de l'actif en temps discret s'écrit comme su
 \begin{equation}
 S_{n+1} = S_{n} + \mu h S_{n} + \sigma h^{1/2} S_{n} \xi_{n}   
 \end{equation} 
-où $\xi_{n}, n \geq 0$ est une suite de v.a. iid de loi N(0,1) indépendante de $S_{0}$. 
+où $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$. 
 
 \chapter{Démonstration des exercices}
 \section{Question 1}
@@ -129,5 +129,36 @@ S_{M} = S_{0} \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
 	&= \ln(1 + \mu h + \sigma h^{1/2} \xi_{0}) + \ln(1 + \mu h + \sigma h^{1/2} \xi_{1}) + \dots + \ln(1 + \mu h + \sigma h^{1/2} \xi_{M-1})\\
 	&= \sum_{n=0}^{M-1} ln(1  + \mu h + \sigma h^{1/2} \xi_{n})\\	
 \end{align*}
+
+\section{Question 2}
+En utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, et la loi des grands nombres, montrer que
+\begin{align*}
+	\ln(\frac{S(t)}{S_{0}}) \approx (\mu - \frac{1}{2} \sigma^{2})t.
+\end{align*}
+\par Ici on a supposé que l'approximation proposée est valable lorsque $h \rightarrow 0$.
+
+\noindent \textbf{Démonstration}:
+\par Rappel: 
+\par La Loi des grands nombres: si $X_{1}, \dots, X_{n}$ est une suite de v.a. indépendantes de même loi ayant une espérance $\mu$ et une variance $\sigma^{2}$, alors la suite ($\overline{X_{n}}$) définie par $\overline{X_{n}} = \frac{1}{n} \prod_{i=1}^{n}X_{i}$ vérifie: $\overline{X_{n}} \rightarrow \mu$.
+\par On note que $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n})$, donc:
+\begin{align*}
+	\ln (\frac{S(t)}{S_{0}}) = \ln (\frac{S_{n}}{S_{0}}) = \prod_{n=0}^{M-1} a_{n}
+\end{align*}
+\par Et selon la loi des grands nombres, nous obtenons:
+\begin{align*} 
+\prod_{n=0}^{M-1} a_{n} = (M-1) \overline{a_{n}} = (M-1) E(a_{n}).
+\end{align*} 
+\par Donc pour trouver la valeur de $\prod_{n=0}^{M-1} a_{n}$, il faut tout d'abord calculer $E(a_{n})$.
+\par Quand $h \rightarrow 0, \mu h + \sigma h^{1/2} \xi_{n} \rightarrow 0$ et en utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, nous pouvons calculer l'approximation de $a_{n}$ et la valeur de $E(a_{n})$:
+\begin{align*}
+	a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n}) \approx \mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}
+\end{align*}
+\par et donc:
+\begin{align*}
+E[a_{n}] &= E[\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})] \\
+&\approx E[\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}] = E[\mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) \xi_{n} -\frac{1}{2} \sigma^{2} h \xi_{n}^{2}]\\
+&= \mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) E[\xi_{n}] -\frac{1}{2} \sigma^{2} h E[\xi_{n}^{2}]
+\end{align*}
+\par selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E[\xi_{n}] = 0$ et la variance de $\xi_{n}: var(\xi_{n}) = 1$. de plus, 
 
 \end{document}
