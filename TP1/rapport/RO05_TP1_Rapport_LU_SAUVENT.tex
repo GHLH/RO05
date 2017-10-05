@@ -155,10 +155,19 @@ En utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varep
 \end{align*}
 \par et donc:
 \begin{align*}
-E[a_{n}] &= E[\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})] \\
-&\approx E[\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}] = E[\mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) \xi_{n} -\frac{1}{2} \sigma^{2} h \xi_{n}^{2}]\\
-&= \mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) E[\xi_{n}] -\frac{1}{2} \sigma^{2} h E[\xi_{n}^{2}]
+E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
+&\approx E(\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}) = E(\mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) \xi_{n} -\frac{1}{2} \sigma^{2} h \xi_{n}^{2})\\
+&= \mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) E(\xi_{n}) -\frac{1}{2} \sigma^{2} h E(\xi_{n}^{2})
 \end{align*}
-\par selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E[\xi_{n}] = 0$ et la variance de $\xi_{n}: var(\xi_{n}) = 1$. de plus, 
+\par Selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: var(\xi_{n}) = 1$.  Et puis nous pouvons calculer $E(\xi_{n}^{2})$ en utilisant la formule: $var(\xi_{n}) = E(\xi_{n}^{2}) - [E(\xi_{n})]^{2}$ et nous trouvons que le résultat de $E(\xi_{n}^{2})$ est $E(\xi_{n}^{2}) = var(\xi_{n}) - [E(\xi_{n})]^{2} = 1 - 0^{2} = 1$.
+\par Donc la valeur de $E(a_{n})$:
+\begin{align*}
+	E(a_{n}) = \mu h -\frac{1}{2} \mu^{2} h^{2} -\frac{1}{2} \sigma^{2} h = h(\mu - \frac{1}{2} \sigma^{2}) -\frac{1}{2} \mu^{2} h^{2}
+\end{align*}
+\par quand $h \rightarrow 0, h^{2} \rightarrow 0$, donc $\frac{1}{2} \mu^{2} h^{2} \approx 0$ et $E(a_{n}) = h(\mu - \frac{1}{2} \sigma^{2})$.
+\par finalement nous trouvons le résultat suivant:
+\begin{align*}
+		\ln (\frac{S(t)}{S_{0}}) = \prod_{n=0}^{M-1} a_{n} = (M-1) E(a_{n}) \approx (M - 1) h(\mu - \frac{1}{2} \sigma^{2}) = t(\mu - \frac{1}{2} \sigma^{2}).
+\end{align*}
 
 \end{document}
