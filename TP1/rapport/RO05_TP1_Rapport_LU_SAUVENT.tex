@@ -142,13 +142,13 @@ En utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varep
 \par La Loi des grands nombres: si $X_{1}, \dots, X_{n}$ est une suite de v.a. indépendantes de même loi ayant une espérance $\mu$ et une variance $\sigma^{2}$, alors la suite ($\overline{X_{n}}$) définie par $\overline{X_{n}} = \frac{1}{n} \prod_{i=1}^{n}X_{i}$ vérifie: $\overline{X_{n}} \rightarrow \mu$.
 \par On note que $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n})$, donc:
 \begin{align*}
-	\ln (\frac{S(t)}{S_{0}}) = \ln (\frac{S_{n}}{S_{0}}) = \prod_{n=0}^{M-1} a_{n}
+	\ln (\frac{S(t)}{S_{0}}) = \ln (\frac{S_{n}}{S_{0}}) = \sum_{n=0}^{M-1} a_{n}
 \end{align*}
 \par Et selon la loi des grands nombres, nous obtenons:
 \begin{align*} 
-\prod_{n=0}^{M-1} a_{n} = (M-1) \overline{a_{n}} = (M-1) E(a_{n}).
+\sum_{n=0}^{M-1} a_{n} = (M-1) \overline{a_{n}} = (M-1) E(a_{n}).
 \end{align*} 
-\par Donc pour trouver la valeur de $\prod_{n=0}^{M-1} a_{n}$, il faut tout d'abord calculer $E(a_{n})$.
+\par Donc pour trouver la valeur de $\sum_{n=0}^{M-1} a_{n}$, il faut tout d'abord calculer $E(a_{n})$.
 \par Quand $h \rightarrow 0, \mu h + \sigma h^{1/2} \xi_{n} \rightarrow 0$ et en utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, nous pouvons calculer l'approximation de $a_{n}$ et la valeur de $E(a_{n})$:
 \begin{align*}
 	a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n}) \approx \mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}
@@ -167,7 +167,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 \par quand $h \rightarrow 0, h^{2} \rightarrow 0$, donc $\frac{1}{2} \mu^{2} h^{2} \approx 0$ et $E(a_{n}) = h(\mu - \frac{1}{2} \sigma^{2})$.
 \par finalement nous trouvons le résultat suivant:
 \begin{align*}
-		\ln (\frac{S(t)}{S_{0}}) = \prod_{n=0}^{M-1} a_{n} = (M-1) E(a_{n}) \approx (M - 1) h(\mu - \frac{1}{2} \sigma^{2}) = t(\mu - \frac{1}{2} \sigma^{2}).
+		\ln (\frac{S(t)}{S_{0}}) = \sum_{n=0}^{M-1} a_{n} = (M-1) E(a_{n}) \approx (M - 1) h(\mu - \frac{1}{2} \sigma^{2}) = t(\mu - \frac{1}{2} \sigma^{2}).
 \end{align*}
 
 \section{Question 3}
@@ -178,5 +178,5 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 
 \noindent \textbf{Démonstration}:
 \par Rappel:
-\par Théorème de la Limite Centrale(TLC): soit 
+\par Théorème de la Limite Centrale(TLC): soit ($X_{n}$) une suite de v.a. iid d'espérance $\mu$ et de variance $\sigma^{2}$, et ($\overline X_{n}$) la suite de terme général $\overline X_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i}$. On a: $\frac{{\overline{X_{n}}} - \mu}{\sigma / \sqrt{n}} \rightarrow N(0,1)$, ou, de manière équivalente: $ \frac{\sum_{i=1}^{n}X_{i} - n\mu}{\sigma \sqrt{n}} \rightarrow N(0,1)$.
 \end{document}
