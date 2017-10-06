@@ -71,7 +71,7 @@ S_{n+1} = S_{n} + \mu h S_{n} + \sigma h^{1/2} S_{n} \xi_{n}
 \end{equation} 
 où $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$. 
 
-\chapter{Démonstration des exercices}
+\chapter{Démonstrations des exercices}
 \section{Question 1}
 \noindent Monter que 
 \begin{align*}
@@ -83,47 +83,49 @@ où $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante 
 \end{align*}
 
 \noindent \textbf{Démonstration}:
-\par Selon l'équation(1.1), nous utilisons la méthode de la multiplication continuée pour résoudre cette question:
-\par quand n = 0, nous obtenons:
-\begin{equation}
+\par \noindent Selon l'équation(1.1), nous utilisons la méthode de la multiplication continuée pour résoudre cette question:
+\begin{itemize}
+	\item quand n = 0, nous obtenons:
+	\begin{equation}
 	S_{1} = S_{0} + \mu h S_{0} + \sigma h^{1/2} S_{0} \xi_{0}
-\end{equation} 
-\par et pour $S_{0} \neq 0$ nous obtenons:
-\begin{equation}
-\frac{S_{1}}{S_{0}} = 1 + \mu h + \sigma h^{1/2} \xi_{0}
-\end{equation} 
+	\end{equation} 
+	\par et pour $S_{0} \neq 0$ nous obtenons:
+	\begin{equation}
+	\frac{S_{1}}{S_{0}} = 1 + \mu h + \sigma h^{1/2} \xi_{0}
+	\end{equation} 
+	
+	\item quand n = 1, nous obtenons:
+	\begin{equation}
+	S_{2} = S_{1} + \mu h S_{1} + \sigma h^{1/2} S_{1} \xi_{1}
+	\end{equation}
+	\par et pour $S_{1} \neq 0$ nous obtenons:
+	\begin{equation}
+	\frac{S_{2}}{S_{1}} = 1 + \mu h + \sigma h^{1/2} \xi_{1}
+	\end{equation} 	
+	
+	\item Nous obtenons les autres équations en utilisant la même transformation et pour la dernière équation, c'est quand $n = M - 1$, nous obtenons:
+	\begin{equation}
+	S_{M} = S_{M-1} + \mu h S_{M-1} + \sigma h^{1/2} S_{M-1} \xi_{M-1}
+	\end{equation}
+	\par et pour $S_{M-1} \neq 0$ nous obtenons:
+	\begin{equation}
+	\frac{S_{M}}{S_{M-1}} = 1 + \mu h + \sigma h^{1/2} \xi_{M-1}
+	\end{equation}
+\end{itemize}
 
-\par quand n = 1, nous obtenons:
-\begin{equation}
-S_{2} = S_{1} + \mu h S_{1} + \sigma h^{1/2} S_{1} \xi_{1}
-\end{equation}
-\par et pour $S_{1} \neq 0$ nous obtenons:
-\begin{equation}
-\frac{S_{2}}{S_{1}} = 1 + \mu h + \sigma h^{1/2} \xi_{1}
-\end{equation} 	
-
-\par Nous obtenons les autres équations en utilisant la même transformation et pour la dernière équation, c'est quand $n = M - 1$, nous obtenons:
-\begin{equation}
-S_{M} = S_{M-1} + \mu h S_{M-1} + \sigma h^{1/2} S_{M-1} \xi_{M-1}
-\end{equation}
-\par et pour $S_{M-1} \neq 0$ nous obtenons:
-\begin{equation}
-\frac{S_{M}}{S_{M-1}} = 1 + \mu h + \sigma h^{1/2} \xi_{M-1}
-\end{equation}
-
-\par Ensuite, nous multiplions des équations ensemble et obtenons l'équation finale: 
+\par\noindent Ensuite, nous multiplions des équations ensemble et obtenons l'équation finale: 
 \begin{align*}
 	\frac{S_{M}}{S_{0}} &= \frac{S_{M}}{\xout{S_{M-1}}} * \frac{\xout{S_{M-1}}}{\xout{S_{M-2}}} *\dots * \frac{\xout{S_{2}}}{\xout{S_{1}}} * \frac{\xout{S_{1}}}{S_{0}}\\
 &= (1 + \mu h + \sigma h^{1/2} \xi_{0}) * (1 + \mu h + \sigma h^{1/2} \xi_{1}) * \dots * (1 + \mu h + \sigma h^{1/2} \xi_{M-1})\\
 &= \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
 \end{align*}
  
-\par Donc, nous trouvons le résultat suivant:
+\par \noindent Donc, nous trouvons le résultat suivant:
 \begin{equation}
 S_{M} = S_{0} \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
 \end{equation}
 
-\par Maintenant nous calculons $\ln(\frac{S_{M}}{S_{0}})$:
+\par \noindent Maintenant nous calculons $\ln(\frac{S_{M}}{S_{0}})$:
 \begin{align*}
 	\ln(\frac{S_{M}}{S_{0}}) &= \ln \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n}) \\
 	&= \ln(1 + \mu h + \sigma h^{1/2} \xi_{0}) + \ln(1 + \mu h + \sigma h^{1/2} \xi_{1}) + \dots + \ln(1 + \mu h + \sigma h^{1/2} \xi_{M-1})\\
@@ -131,61 +133,61 @@ S_{M} = S_{0} \prod_{n=0}^{M-1} (1 + \mu h + \sigma h^{1/2} \xi_{n})
 \end{align*}
 
 \section{Question 2}
-En utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, et la loi des grands nombres, montrer que
+\noindent En utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, et la loi des grands nombres, montrer que
 \begin{align*}
 	\ln(\frac{S(t)}{S_{0}}) \approx (\mu - \frac{1}{2} \sigma^{2})t.
 \end{align*}
-\par Ici on a supposé que l'approximation proposée est valable lorsque $h \rightarrow 0$.
+\par \noindent Ici on a supposé que l'approximation proposée est valable lorsque $h \rightarrow 0$.
 
 \noindent \textbf{Démonstration}:
-\par Rappel: 
-\par La Loi des grands nombres: si $X_{1}, \dots, X_{n}$ est une suite de v.a. indépendantes de même loi ayant une espérance $\mu$ et une variance $\sigma^{2}$, alors la suite ($\overline{X_{n}}$) définie par $\overline{X_{n}} = \frac{1}{n} \prod_{i=1}^{n}X_{i}$ vérifie: $\overline{X_{n}} \rightarrow \mu$.
-\par On note que $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n})$, donc:
+\par \noindent Rappel: 
+\par \noindent La Loi des grands nombres: si $X_{1}, \dots, X_{n}$ est une suite de v.a. indépendantes de même loi ayant une espérance $\mu$ et une variance $\sigma^{2}$, alors la suite ($\overline{X_{n}}$) définie par $\overline{X_{n}} = \frac{1}{n} \prod_{i=1}^{n}X_{i}$ vérifie: $\overline{X_{n}} \rightarrow \mu$.
+\par \noindent On note que $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n})$, donc:
 \begin{align*}
 	\ln (\frac{S(t)}{S_{0}}) = \ln (\frac{S_{n}}{S_{0}}) = \sum_{n=0}^{M-1} a_{n}
 \end{align*}
-\par Et selon la loi des grands nombres, nous obtenons:
+\par \noindent Et selon la loi des grands nombres, nous obtenons:
 \begin{align*} 
 \sum_{n=0}^{M-1} a_{n} = (M-1) \overline{a_{n}} = (M-1) E(a_{n}).
 \end{align*} 
-\par Donc pour trouver la valeur de $\sum_{n=0}^{M-1} a_{n}$, il faut tout d'abord calculer $E(a_{n})$.
-\par Quand $h \rightarrow 0, \mu h + \sigma h^{1/2} \xi_{n} \rightarrow 0$ et en utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, nous pouvons calculer l'approximation de $a_{n}$ et la valeur de $E(a_{n})$:
+\par \noindent Donc pour trouver la valeur de $\sum_{n=0}^{M-1} a_{n}$, il faut tout d'abord calculer $E(a_{n})$.
+\par \noindent Quand $h \rightarrow 0, \mu h + \sigma h^{1/2} \xi_{n} \rightarrow 0$ et en utilisant l'approximation $\ln (1 + \varepsilon) \approx \varepsilon - \varepsilon^{2} / 2$, pour $\varepsilon \rightarrow 0$, nous pouvons calculer l'approximation de $a_{n}$ et la valeur de $E(a_{n})$:
 \begin{align*}
 	a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n}) \approx \mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}
 \end{align*}
-\par et donc:
+\par \noindent et donc:
 \begin{align*}
 E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 &\approx E(\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}) = E(\mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) \xi_{n} -\frac{1}{2} \sigma^{2} h \xi_{n}^{2})\\
 &= \mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) E(\xi_{n}) -\frac{1}{2} \sigma^{2} h E(\xi_{n}^{2})
 \end{align*}
-\par Selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: Var(\xi_{n}) = 1$.  Et puis nous pouvons calculer $E(\xi_{n}^{2})$ en utilisant la formule: $var(\xi_{n}) = E(\xi_{n}^{2}) - [E(\xi_{n})]^{2}$ et nous trouvons que le résultat de $E(\xi_{n}^{2})$ est $E(\xi_{n}^{2}) = Var(\xi_{n}) - [E(\xi_{n})]^{2} = 1 - 0^{2} = 1$.
-\par Donc la valeur de $E(a_{n})$:
+\par \noindent Selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: Var(\xi_{n}) = 1$.  Et puis nous pouvons calculer $E(\xi_{n}^{2})$ en utilisant la formule: $var(\xi_{n}) = E(\xi_{n}^{2}) - [E(\xi_{n})]^{2}$ et nous trouvons que le résultat de $E(\xi_{n}^{2})$ est $E(\xi_{n}^{2}) = Var(\xi_{n}) - [E(\xi_{n})]^{2} = 1 - 0^{2} = 1$.
+\par \noindent Donc la valeur de $E(a_{n})$:
 \begin{align*}
 	E(a_{n}) = \mu h -\frac{1}{2} \mu^{2} h^{2} -\frac{1}{2} \sigma^{2} h = h(\mu - \frac{1}{2} \sigma^{2}) -\frac{1}{2} \mu^{2} h^{2}
 \end{align*}
-\par quand $h \rightarrow 0, h^{2} \rightarrow 0$, donc $\frac{1}{2} \mu^{2} h^{2} \approx 0$ et $E(a_{n}) = h(\mu - \frac{1}{2} \sigma^{2})$.
-\par finalement nous trouvons le résultat suivant:
+\par \noindent Quand $h \rightarrow 0, h^{2} \rightarrow 0$, donc $\frac{1}{2} \mu^{2} h^{2} \approx 0$ et $E(a_{n}) = h(\mu - \frac{1}{2} \sigma^{2})$.
+\par \noindent Finalement nous trouvons le résultat suivant:
 \begin{align*}
 		\ln (\frac{S(t)}{S_{0}}) = \sum_{n=0}^{M-1} a_{n} = (M-1) E(a_{n}) \approx (M - 1) h(\mu - \frac{1}{2} \sigma^{2}) = t(\mu - \frac{1}{2} \sigma^{2}).
 \end{align*}
 
 \section{Question 3}
-\par A l'aide du théorème de la limite central, montrer que l'approximation ci-dessus peut se préciser plus par la relation
+\par \noindent A l'aide du théorème de la limite central, montrer que l'approximation ci-dessus peut se préciser plus par la relation
 \begin{align*}
 	\ln (\frac{S(t)}{S_{0}}) \thicksim N(((\mu - \frac{1}{2} \sigma^{2})t, \sigma^{2}t).
 \end{align*}
 
 \noindent \textbf{Démonstration}:
-\par Rappel:
-\par Théorème de la Limite Centrale(TLC): soit ($X_{n}$) une suite de v.a. iid d'espérance $\mu$ et de variance $\sigma^{2}$, et ($\overline X_{n}$) la suite de terme général $\overline X_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i}$. On a: $\frac{{\overline{X_{n}}} - \mu}{\sigma / \sqrt{n}} \rightarrow N(0,1)$, ou, de manière équivalente: $ \frac{\sum_{i=1}^{n}X_{i} - n\mu}{\sigma \sqrt{n}} \rightarrow N(0,1)$.
-\par Selon l'TLC, nous obtenons la formule suivante: $\frac{\sum_{n=0}^{M-1} a_{n} - (M-1)\mu} {\sigma \sqrt{M-1}} \rightarrow N(0,1)$, avec $\mu$ l'espérance de $a_{n}$ et $\sigma$ l'écart-type de $a_{n}$.
-\par Donc $\ln \frac{S(t)}{S_{0}}$ suit une loi suivante:
+\par \noindent Rappel:
+\par \noindent Théorème de la Limite Centrale(TLC): soit ($X_{n}$) une suite de v.a. iid d'espérance $\mu$ et de variance $\sigma^{2}$, et ($\overline X_{n}$) la suite de terme général $\overline X_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i}$. On a: $\frac{{\overline{X_{n}}} - \mu}{\sigma / \sqrt{n}} \rightarrow N(0,1)$, ou, de manière équivalente: $ \frac{\sum_{i=1}^{n}X_{i} - n\mu}{\sigma \sqrt{n}} \rightarrow N(0,1)$.
+\par \noindent Selon l'TLC, nous obtenons la formule suivante: $\frac{\sum_{n=0}^{M-1} a_{n} - (M-1)\mu} {\sigma \sqrt{M-1}} \rightarrow N(0,1)$, avec $\mu$ l'espérance de $a_{n}$ et $\sigma$ l'écart-type de $a_{n}$.
+\par \noindent Donc $\ln \frac{S(t)}{S_{0}}$ suit une loi suivante:
 \begin{align*}
 	\ln \frac{S(t)}{S_{0}} \thicksim N((M-1)E(a_{n}), (M-1)Var(a_{n})).
 \end{align*}
-\par Nous avons déjà calculé l'espérance de $a_{n}$: $E(a_{n})$ dans Question 2 et maintenant nous allons calculer la variance de $a_{n}$: $Var(a_{n})$.
-\par Rappel: 
+\par \noindent Nous avons déjà calculé l'espérance de $a_{n}$: $E(a_{n})$ dans Question 2 et maintenant nous allons calculer la variance de $a_{n}$: $Var(a_{n})$.
+\par \noindent Rappel: 
 \begin{itemize}
 	\item Nous trouvons l'approximation de $a_{n}$: $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n}) \approx \mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}$, avec $h \rightarrow 0$.
 	\item Quelques propositions:
@@ -199,7 +201,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 	\item $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: Var(\xi_{n}) = 1$.
 \end{itemize}
 
-\par Donc nous avons:
+\par \noindent Donc nous avons:
 \begin{align*}
 	Var(a_{n}) &= Var(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \approx Var (\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}) \\
 	&= Var[\mu h - \frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2})\xi_{n} - \frac{1}{2} \sigma^{2} h \xi_{n}^{2}] \\
@@ -209,7 +211,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 	&= \sigma^{2} h Var(\xi_{n}) \\
 	&= \sigma^{2} h
 \end{align*}
-\par Donc nous trouvons la relation suivante:
+\par \noindent Donc nous trouvons la relation suivante:
 \begin{align*}
 	 &\ln \frac{S(t)}{S_{0}} \thicksim N((M-1)E(a_{n}), (M-1)Var(a_{n})) \\
 	 \Leftrightarrow &\ln \frac{S(t)}{S_{0}} \thicksim N((M-1) h(\mu - \frac{1}{2} \sigma^{2}), (M-1) h \sigma^{2}) \\
@@ -224,7 +226,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 où $Z \thicksim N(0,1)$.
 
 \noindent \textbf{Démonstration}:
-\par Selon l'TCL, nous avons:
+\par \noindent Selon l'TCL, nous avons:
 \begin{align*}
 	&\frac{{\ln(\frac{S(t)}{S_{0}})}  - (\mu - \frac{1}{2} \sigma^{2})t}{\sqrt{\sigma^{2} t}} \thicksim N(0,1) = Z \\
 	\Leftrightarrow &\ln(\frac{S(t)}{S_{0}}) = (\mu - \frac{1}{2} \sigma^{2})t + Z \sqrt{\sigma^{2} t} \\
@@ -235,14 +237,29 @@ où $Z \thicksim N(0,1)$.
 \par \noindent Expliquer pourquoi la v.a. $S(T)/S(0)$ (T fixé) suit-elle une loi log-normale? Spécifier ses paramètres.
 
 \noindent \textbf{Démonstration}:
-\par \noindent Rappel: une variable aléatoire X est dite suivre une loi log-normale de paramètres $\mu$ et $\sigma^{2}$ si la variable $Y = \ln(X)$ suit une loi normale d'espérance $\mu$ et de variance $\sigma^{2}$.
+\par \noindent Rappel:
+\par \noindent Une variable aléatoire X est dite suivre une loi log-normale de paramètres $\mu$ et $\sigma^{2}$ si la variable $Y = \ln(X)$ suit une loi normale d'espérance $\mu$ et de variance $\sigma^{2}$.
 \par \noindent Nous notons que $X = \frac{S(T)}{S(0)}$ avec $S(T) = S_{0} exp((\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z)$, avec $Z \thicksim N(0,1)$ et $S(0) = S_{0}$.
-\par Donc nous calculons la valeur de $\ln(X)$ et nous notons cette valeur à Y:
+\par \noindent Donc nous calculons la valeur de $\ln(X)$ et nous notons cette valeur à Y:
 \begin{align*}
 	&Y = \ln(\frac{S(T)}{S(0)}) = \ln(exp((\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z)) = (\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z \\
 	\Leftrightarrow &\frac{Y - (\mu - \frac{1}{2} \sigma^{2})T}{\sigma \sqrt{T}} = Z \thicksim N(0,1) \\
 	\Leftrightarrow & Y \thicksim N((\mu - \frac{1}{2} \sigma^{2})T, \sigma^{2} T)
 \end{align*}
-\par Donc $\frac{S(T)}{S(0)}$ suit une loi log-normale avec l'espérance $(\mu - \frac{1}{2} \sigma^{2})T$ et la variance $\sigma^{2} T$.
+\par \noindent Donc $\frac{S(T)}{S(0)}$ suit une loi log-normale avec l'espérance $(\mu - \frac{1}{2} \sigma^{2})T$ et la variance $\sigma^{2} T$.
+
+\section{Question 6}
+\par \noindent Donner un intervalle de confiance de la valeur de l'option au temps d'exercice au niveau $\alpha$.
+
+\noindent \textbf{Démonstration}:
+\par \noindent Selon l'exercice précédent, nous avons la loi de $Y = \ln(\frac{S(t)}{S(0)}) \thicksim N((\mu - \frac{1}{2} \sigma^{2})t, \sigma^{2} t)$, avec $\sigma^{2}$ connu.
+\par \noindent Donc nous cherchons à construire l'intervalle de confiance bilatéral:
+\begin{align*}
+	&\mathbb{P}(\mu_{\frac{\alpha}{2}} \leq \frac{Y - (\mu - \frac{1}{2} \sigma^{2})t}{\sigma \sqrt{t}} \leq \mu_{1- \frac{\alpha}{2}}) = 1 - \alpha \\
+	\Leftrightarrow &\mathbb{P}(-\mu_{1 - \frac{\alpha}{2}} \leq \frac{Y - (\mu - \frac{1}{2} \sigma^{2})t}{\sigma \sqrt{t}} \leq \mu_{1- \frac{\alpha}{2}}) = 1 - \alpha \\
+	\Leftrightarrow &\mathbb{P}((\mu - \frac{1}{2} \sigma^{2})t -\sigma \sqrt{t} \mu_{1 - \frac{\alpha}{2}} \leq Y \leq (\mu - \frac{1}{2} \sigma^{2})t + \sigma \sqrt{t} \mu_{1- \frac{\alpha}{2}}) = 1 - \alpha \\
+	\Leftrightarrow &\mathbb{P}(S_{0}exp((\mu - \frac{1}{2} \sigma^{2})t -\sigma \sqrt{t} \mu_{1 - \frac{\alpha}{2}}) \leq S(t) \leq S_{0}exp((\mu - \frac{1}{2} \sigma^{2})t + \sigma \sqrt{t} \mu_{1- \frac{\alpha}{2}})) = 1 - \alpha \\
+\end{align*}  
+\noindent Donc l'intervalle de confiance est: $[S_{0}exp((\mu - \frac{1}{2} \sigma^{2})t -\sigma \sqrt{t} \mu_{1 - \frac{\alpha}{2}}),  S_{0}exp((\mu - \frac{1}{2} \sigma^{2})t + \sigma \sqrt{t} \mu_{1- \frac{\alpha}{2}})]$.
 
 \end{document}
