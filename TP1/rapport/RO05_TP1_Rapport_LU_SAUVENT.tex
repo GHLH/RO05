@@ -159,7 +159,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 &\approx E(\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}) = E(\mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) \xi_{n} -\frac{1}{2} \sigma^{2} h \xi_{n}^{2})\\
 &= \mu h -\frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2}) E(\xi_{n}) -\frac{1}{2} \sigma^{2} h E(\xi_{n}^{2})
 \end{align*}
-\par Selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: var(\xi_{n}) = 1$.  Et puis nous pouvons calculer $E(\xi_{n}^{2})$ en utilisant la formule: $var(\xi_{n}) = E(\xi_{n}^{2}) - [E(\xi_{n})]^{2}$ et nous trouvons que le résultat de $E(\xi_{n}^{2})$ est $E(\xi_{n}^{2}) = var(\xi_{n}) - [E(\xi_{n})]^{2} = 1 - 0^{2} = 1$.
+\par Selon l'exercice, on a $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc nous savons l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: Var(\xi_{n}) = 1$.  Et puis nous pouvons calculer $E(\xi_{n}^{2})$ en utilisant la formule: $var(\xi_{n}) = E(\xi_{n}^{2}) - [E(\xi_{n})]^{2}$ et nous trouvons que le résultat de $E(\xi_{n}^{2})$ est $E(\xi_{n}^{2}) = Var(\xi_{n}) - [E(\xi_{n})]^{2} = 1 - 0^{2} = 1$.
 \par Donc la valeur de $E(a_{n})$:
 \begin{align*}
 	E(a_{n}) = \mu h -\frac{1}{2} \mu^{2} h^{2} -\frac{1}{2} \sigma^{2} h = h(\mu - \frac{1}{2} \sigma^{2}) -\frac{1}{2} \mu^{2} h^{2}
@@ -179,4 +179,41 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 \noindent \textbf{Démonstration}:
 \par Rappel:
 \par Théorème de la Limite Centrale(TLC): soit ($X_{n}$) une suite de v.a. iid d'espérance $\mu$ et de variance $\sigma^{2}$, et ($\overline X_{n}$) la suite de terme général $\overline X_{n} = \frac{1}{n} \sum_{i=1}^{n} X_{i}$. On a: $\frac{{\overline{X_{n}}} - \mu}{\sigma / \sqrt{n}} \rightarrow N(0,1)$, ou, de manière équivalente: $ \frac{\sum_{i=1}^{n}X_{i} - n\mu}{\sigma \sqrt{n}} \rightarrow N(0,1)$.
+\par Selon l'TLC, nous obtenons la formule suivante: $\frac{\sum_{n=0}^{M-1} a_{n} - (M-1)\mu} {\sigma \sqrt{M-1}} \rightarrow N(0,1)$, avec $\mu$ l'espérance de $a_{n}$ et $\sigma$ l'écart-type de $a_{n}$.
+\par Donc $\ln \frac{S(t)}{S_{0}}$ suit une loi suivante:
+\begin{align*}
+	\ln \frac{S(t)}{S_{0}} \thicksim N((M-1)E(a_{n}), (M-1)Var(a_{n})).
+\end{align*}
+\par Nous avons déjà calculé l'espérance de $a_{n}$: $E(a_{n})$ dans Question 2 et maintenant nous allons calculer la variance de $a_{n}$: $Var(a_{n})$.
+\par Rappel: 
+\begin{itemize}
+	\item Nous trouvons l'approximation de $a_{n}$: $a_{n} = \ln (1 + \mu h + \sigma h^{1/2} \xi_{n}) \approx \mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}$, avec $h \rightarrow 0$.
+	\item Quelques propositions:
+	\begin{enumerate}
+		\item $\forall \alpha, \beta \in \mathbb{R}, Var(\alpha X + \beta) = \alpha^{2} Var(X)$.
+		\item $Var(X \pm Y) = Var(X) + Var(Y) \pm Cov(X, Y)$, avec Cov(X, Y) la covariance entre X et Y.
+		\item $Cov(X, Y) = E[(X - E(X))(Y - E(Y))] = E(XY) - E(X)E(Y)$.
+		\item $\forall \alpha, \beta \in \mathbb{R},Cov(\alpha X, \beta Y) = \alpha \beta Cov(X,Y)$.
+	\end{enumerate}
+	\item $\forall \alpha > 1$, quand $h \rightarrow 0, h^{\alpha} \rightarrow 0$.
+	\item $\xi_{n}, n \geq 0$ est une suite de v.a. i.i.d de loi N(0,1) indépendante de $S_{0}$, donc l'espérance de $\xi_{n}: E(\xi_{n}) = 0$ et la variance de $\xi_{n}: Var(\xi_{n}) = 1$.
+\end{itemize}
+
+\par Donc nous avons:
+\begin{align*}
+	Var(a_{n}) &= Var(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \approx Var (\mu h +\sigma h^{1/2} \xi_{n} - \frac{(\mu h + \sigma h^{1/2} \xi_{n})^{2}}{2}) \\
+	&= Var[\mu h - \frac{1}{2} \mu^{2} h^{2} + (\sigma h^{1/2} - \mu \sigma h^{3/2})\xi_{n} - \frac{1}{2} \sigma^{2} h \xi_{n}^{2}] \\
+	&= Var[(\sigma h^{1/2} - \mu \sigma h^{3/2})\xi_{n} - \frac{1}{2} \sigma^{2} h \xi_{n}^{2}]\\
+	&= (\sigma h^{1/2} - \mu \sigma h^{3/2})^{2} Var(\xi_{n}) + (\frac{1}{2} \sigma^{2} h)^{2} Var(\xi_{n}^{2}) - 2Cov[(\sigma h^{1/2} - \mu \sigma h^{3/2})\xi_{n}, \frac{1}{2} \sigma^{2} h \xi_{n}^{2}] \\
+	&= (\sigma^{2} h - 2\mu \sigma^{2} h^{2} + \mu^{2} \sigma^{2} h^{3}) Var(\xi_{n}) + \frac{1}{4} \sigma^{4} h^{2} Var(\xi_{n}^{2}) -(\sigma^{3} h^{3/2} - \mu \sigma^{3} h^{5/2}) Cov(\xi_{n}, \xi_{n}^{2}) \\
+	&= \sigma^{2} h Var(\xi_{n}) \\
+	&= \sigma^{2} h
+\end{align*}
+\par Donc nous trouvons la relation suivante:
+\begin{align*}
+	 &\ln \frac{S(t)}{S_{0}} \thicksim N((M-1)E(a_{n}), (M-1)Var(a_{n})) \\
+	 \Leftrightarrow &\ln \frac{S(t)}{S_{0}} \thicksim N((M-1) h(\mu - \frac{1}{2} \sigma^{2}), (M-1) h \sigma^{2}) \\
+	 \Leftrightarrow &\ln \frac{S(t)}{S_{0}} \thicksim N((\mu - \frac{1}{2} \sigma^{2}) t, \sigma^{2} t).	
+\end{align*}
+
 \end{document}
