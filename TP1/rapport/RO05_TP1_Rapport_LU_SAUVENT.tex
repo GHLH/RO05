@@ -217,7 +217,7 @@ E(a_{n}) &= E(\ln (1 + \mu h + \sigma h^{1/2} \xi_{n})) \\
 \end{align*}
 
 \section{Question 4}
-\par Conclure de la question précédente que
+\par \noindent Conclure de la question précédente que
 \begin{align*}
 	S(t) = S_{0} exp((\mu - \frac{1}{2} \sigma^{2})t + \sigma \sqrt{t} Z),
 \end{align*}
@@ -230,5 +230,19 @@ où $Z \thicksim N(0,1)$.
 	\Leftrightarrow &\ln(\frac{S(t)}{S_{0}}) = (\mu - \frac{1}{2} \sigma^{2})t + Z \sqrt{\sigma^{2} t} \\
 	\Leftrightarrow &S(t) = S_{0} exp((\mu - \frac{1}{2} \sigma^{2})t + \sigma \sqrt{t} Z). 
 \end{align*}
+
+\section{Question 5}
+\par \noindent Expliquer pourquoi la v.a. $S(T)/S(0)$ (T fixé) suit-elle une loi log-normale? Spécifier ses paramètres.
+
+\noindent \textbf{Démonstration}:
+\par \noindent Rappel: une variable aléatoire X est dite suivre une loi log-normale de paramètres $\mu$ et $\sigma^{2}$ si la variable $Y = \ln(X)$ suit une loi normale d'espérance $\mu$ et de variance $\sigma^{2}$.
+\par \noindent Nous notons que $X = \frac{S(T)}{S(0)}$ avec $S(T) = S_{0} exp((\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z)$, avec $Z \thicksim N(0,1)$ et $S(0) = S_{0}$.
+\par Donc nous calculons la valeur de $\ln(X)$ et nous notons cette valeur à Y:
+\begin{align*}
+	&Y = \ln(\frac{S(T)}{S(0)}) = \ln(exp((\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z)) = (\mu - \frac{1}{2} \sigma^{2})T + \sigma \sqrt{T} Z \\
+	\Leftrightarrow &\frac{Y - (\mu - \frac{1}{2} \sigma^{2})T}{\sigma \sqrt{T}} = Z \thicksim N(0,1) \\
+	\Leftrightarrow & Y \thicksim N((\mu - \frac{1}{2} \sigma^{2})T, \sigma^{2} T)
+\end{align*}
+\par Donc $\frac{S(T)}{S(0)}$ suit une loi log-normale avec l'espérance $(\mu - \frac{1}{2} \sigma^{2})T$ et la variance $\sigma^{2} T$.
 
 \end{document}

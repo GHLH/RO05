@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100 64-bit) (preloaded format=xelatex 2016.11.16)  6 OCT 2017 19:05
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100 64-bit) (preloaded format=xelatex 2016.11.16)  6 OCT 2017 22:11
 entering extended mode
 **./RO05_TP1_Rapport_LU_SAUVENT.tex
 (RO05_TP1_Rapport_LU_SAUVENT.tex
@@ -1276,14 +1276,16 @@ File: img/utc.png Graphic file (type QTm)
  <use  "img/utc.png" > [4]
 File: img/utc.png Graphic file (type QTm)
  <use  "img/utc.png" > [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 234.
 File: img/utc.png Graphic file (type QTm)
  <use  "img/utc.png" >
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 234.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 248.
+File: img/utc.png Graphic file (type QTm)
+ <use  "img/utc.png" > [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
  (RO05_TP1_Rapport_LU_SAUVENT.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 234.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 234.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 248.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 248.
  ) 
 Here is how much of TeX's memory you used:
  26813 strings out of 428408
@@ -1294,4 +1296,4 @@ Here is how much of TeX's memory you used:
  1328 hyphenation exceptions out of 8191
  55i,15n,47p,10482b,689s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on RO05_TP1_Rapport_LU_SAUVENT.pdf (7 pages).
+Output written on RO05_TP1_Rapport_LU_SAUVENT.pdf (8 pages).
